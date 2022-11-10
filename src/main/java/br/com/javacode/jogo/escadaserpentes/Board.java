@@ -47,6 +47,9 @@ public class Board implements Printable {
 		for (Contador contador : contadores) {
 			contador.goTo(spaceStartHere);
 		}
+	}
+
+	public void mover(Contador contador, int numeroDado) {
 
 	}
 

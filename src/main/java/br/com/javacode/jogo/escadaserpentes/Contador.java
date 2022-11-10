@@ -21,4 +21,13 @@ public class Contador {
 	public void goTo(Space spaceStartHere) {
 		atual = spaceStartHere;
 	}
+
+	public void jogarDado(Board board) {
+		Dado dado = Dado.get();
+		int numeroDado = dado.jogarDado();
+
+		System.out.format("Jogado '%s' jogou o dado e o resultado foi '%d\n' ", nome, numeroDado);
+
+		board.mover(this, numeroDado);
+	}
 }
