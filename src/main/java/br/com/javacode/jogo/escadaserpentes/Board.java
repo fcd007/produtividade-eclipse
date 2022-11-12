@@ -50,7 +50,18 @@ public class Board implements Printable {
 	}
 
 	public void mover(Contador contador, int numeroDado) {
+		Space espaco = contador.getAtual();
+		int novoEspaco = espaco.getNumber() + numeroDado;
 
+		Space novoSpaco;
+
+		if (novoEspaco > spaceHome.getNumber()) {
+			novoSpaco = spaceHome;
+		} else {
+			novoSpaco = spaces[novoEspaco];
+		}
+
+		contador.goTo(novoSpaco);
+		System.out.format("Jogador '%s' foi para a casa %s\n", contador.getNome(), novoEspaco);
 	}
-
 }

@@ -4,7 +4,7 @@ public class Contadores implements Printable {
 
 	private Contador[] contadores;
 
-	private int jogadorAtualIndex;
+	private int jogadorAtualIndex = -1;
 
 	public Contadores(Board board, int numeroDeJogadores) {
 		contadores = new Contador[numeroDeJogadores];
@@ -14,9 +14,13 @@ public class Contadores implements Printable {
 			contadores[i] = new Contador(String.valueOf(nomeAtual));
 			nomeAtual++;
 		}
-		
+
 		board.setUpContadores(contadores);
-		
+	}
+
+	public Contador next() {
+		jogadorAtualIndex = (jogadorAtualIndex + 1) % contadores.length;
+		return contadores[jogadorAtualIndex];
 	}
 
 	@Override

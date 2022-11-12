@@ -8,14 +8,14 @@ public class Dado {
 
 	private static Dado instance;
 
-	private Random random;
+	private Random random = new Random();
 
 	private Dado() {
 
 	}
 
 	public static Dado get() {
-		if (instance != null) {
+		if (instance == null) {
 			instance = new Dado();
 		}
 

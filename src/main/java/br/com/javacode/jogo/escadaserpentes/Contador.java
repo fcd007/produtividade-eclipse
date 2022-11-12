@@ -26,7 +26,7 @@ public class Contador {
 		Dado dado = Dado.get();
 		int numeroDado = dado.jogarDado();
 
-		System.out.format("Jogado '%s' jogou o dado e o resultado foi '%d\n' ", nome, numeroDado);
+		System.out.format("Jogador '%s' jogou o dado e o resultado foi %d\n", nome, numeroDado);
 
 		board.mover(this, numeroDado);
 	}
