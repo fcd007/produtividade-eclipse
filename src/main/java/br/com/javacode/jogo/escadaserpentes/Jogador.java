@@ -1,12 +1,12 @@
 package br.com.javacode.jogo.escadaserpentes;
 
-public class Contador {
+public class Jogador {
 
 	private String nome;
 
 	private Space atual;
 
-	public Contador(String nome) {
+	public Jogador(String nome) {
 		this.nome = nome;
 	}
 

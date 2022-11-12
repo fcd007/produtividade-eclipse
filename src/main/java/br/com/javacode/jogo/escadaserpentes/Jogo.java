@@ -9,18 +9,21 @@ public class Jogo {
 		Board board = new Board(NUMERO_SPACE);
 		board.print();
 
-		Contadores contadores = new Contadores(board, NUMERO_DE_JOGADORES);
+		Jogadores contadores = new Jogadores(board, NUMERO_DE_JOGADORES);
 		contadores.print();
 
-		while (true) {
-			Contador contadorAtual = contadores.next();
+		while (!board.jogoRodando()) {
+			Jogador contadorAtual = contadores.next();
 			contadorAtual.jogarDado(board);
 
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
+
+		Jogador ganhador = board.getGanhador();
+		System.out.format("O ganhador foi o jogador %s", ganhador.getNome());
 	}
 }

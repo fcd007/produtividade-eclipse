@@ -12,6 +12,8 @@ public class Board implements Printable {
 
 	private Space spaceStartHere;
 
+	private Jogador ganhador;
+
 	public Board(int numeroSpacos) {
 		spaces = new Space[numeroSpacos + 2];
 
@@ -43,25 +45,34 @@ public class Board implements Printable {
 		System.out.println();
 	}
 
-	public void setUpContadores(Contador[] contadores) {
-		for (Contador contador : contadores) {
+	public void setUpJogadores(Jogador[] contadores) {
+		for (Jogador contador : contadores) {
 			contador.goTo(spaceStartHere);
 		}
 	}
 
-	public void mover(Contador contador, int numeroDado) {
-		Space espaco = contador.getAtual();
+	public void mover(Jogador jogador, int numeroDado) {
+		Space espaco = jogador.getAtual();
 		int novoEspaco = espaco.getNumber() + numeroDado;
 
 		Space novoSpaco;
 
-		if (novoEspaco > spaceHome.getNumber()) {
+		if (novoEspaco >= spaceHome.getNumber()) {
 			novoSpaco = spaceHome;
+			ganhador = jogador;
 		} else {
 			novoSpaco = spaces[novoEspaco];
 		}
 
-		contador.goTo(novoSpaco);
-		System.out.format("Jogador '%s' foi para a casa %s\n", contador.getNome(), novoEspaco);
+		jogador.goTo(novoSpaco);
+		System.out.format("Jogador '%s' foi para a casa %s\n", jogador.getNome(), novoEspaco);
+	}
+
+	public Boolean jogoRodando() {
+		return ganhador != null;
+	}
+	
+	public Jogador getGanhador() {
+		return ganhador;
 	}
 }
