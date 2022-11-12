@@ -1,7 +1,5 @@
 package br.com.javacode.jogo.escadaserpentes;
 
-import br.com.javacode.jogo.escadaserpentes.Space.Type;
-
 public class Space {
 
 	public enum Type {
