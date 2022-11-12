@@ -53,19 +53,27 @@ public class Board implements Printable {
 
 	public void mover(Jogador jogador, int numeroDado) {
 		Space espaco = jogador.getAtual();
-		int novoEspaco = espaco.getNumber() + numeroDado;
+		int novaPosicao = espaco.getNumber() + numeroDado;
 
 		Space novoSpaco;
 
-		if (novoEspaco >= spaceHome.getNumber()) {
+		if (novaPosicao >= spaceHome.getNumber()) {
 			novoSpaco = spaceHome;
 			ganhador = jogador;
 		} else {
-			novoSpaco = spaces[novoEspaco];
+			novoSpaco = spaces[novaPosicao];
 		}
 
 		jogador.goTo(novoSpaco);
-		System.out.format("Jogador '%s' foi para a casa %s\n", jogador.getNome(), novoEspaco);
+		System.out.format("Jogador '%s' foi para a casa %s\n", jogador.getNome(), novaPosicao);
+		
+		Transition transition = novoSpaco.getTransition();
+		
+		if(transition != null) {
+			System.out.format("Jogador '%s' achou uma %s %s\n", jogador.getNome(), transition.getTipo(), novoSpaco);
+			jogador.goTo(transition.getSpaceInicial());
+			System.out.format("Jogador '%s' foi para a casa %s\n", jogador.getNome(), transition.getSpaceDestino());
+		}
 	}
 
 	public Boolean jogoRodando() {
@@ -74,5 +82,13 @@ public class Board implements Printable {
 	
 	public Jogador getGanhador() {
 		return ganhador;
+	}
+	
+	public void adicionarTransicao(int origem, int destino) {
+		Space spaceOrigem = spaces[origem];
+		Space spaceDestino = spaces[destino];
+		
+		Transition transition = new Transition(spaceOrigem, spaceDestino);		
+		spaceOrigem.setTransition(transition);
 	}
 }

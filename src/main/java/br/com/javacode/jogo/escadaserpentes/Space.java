@@ -8,6 +8,7 @@ public class Space {
 
 	private int number;
 	private Type type;
+	private Transition transition;
 
 	public Space(int number, Type type) {
 		this.number = number;
@@ -24,12 +25,19 @@ public class Space {
 
 	@Override
 	public String toString() {
-		if(type == Type.REGULAR) {
+		if (type == Type.REGULAR) {
 			return String.valueOf(number);
-		}else {
+		} else {
 			return number + " (" + type + ")";
 		}
 	}
 
+	public Transition getTransition() {
+		return transition;
+	}
+
+	public void setTransition(Transition transition) {
+		this.transition = transition;
+	}
 
 }

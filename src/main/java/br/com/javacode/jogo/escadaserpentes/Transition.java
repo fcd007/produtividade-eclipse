@@ -13,7 +13,7 @@ public class Transition {
 	private Type tipo;
 
 	@SuppressWarnings("static-access")
-	public Transition(Space spaceInicial, Space spaceDestino, Type tipo) {
+	public Transition(Space spaceInicial, Space spaceDestino) {
 		this.spaceInicial = spaceInicial;
 		this.spaceDestino = spaceDestino;
 
