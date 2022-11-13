@@ -31,7 +31,7 @@ public class Jogo {
 	}
 
 	private void addTransition(Taboleiro board) {
-		//criando um recurso de regra de transicao
+		// criando um recurso de regra de transicao
 		board.adicionarTransicao(4, 12);
 		board.adicionarTransicao(7, 9);
 		board.adicionarTransicao(11, 25);

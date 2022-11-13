@@ -68,10 +68,10 @@ public class Taboleiro implements Imprimir {
 
 		jogador.goTo(novoSpaco);
 		System.out.format("Jogador '%s' foi para a casa %s\n", jogador.getNome(), novaPosicao);
-		
+
 		Transicao transition = novoSpaco.getTransition();
-		
-		if(transition != null) {
+
+		if (transition != null) {
 			System.out.format("Jogador '%s' achou uma %s %s\n", jogador.getNome(), transition.getTipo(), novoSpaco);
 			jogador.goTo(transition.getSpaceInicial());
 			System.out.format("Jogador '%s' foi para a casa %s\n", jogador.getNome(), transition.getSpaceDestino());
@@ -81,16 +81,16 @@ public class Taboleiro implements Imprimir {
 	public Boolean jogoRodando() {
 		return ganhador != null;
 	}
-	
+
 	public Jogador getGanhador() {
 		return ganhador;
 	}
-	
+
 	public void adicionarTransicao(int origem, int destino) {
 		Espaco spaceOrigem = spaces[origem];
 		Espaco spaceDestino = spaces[destino];
-		
-		Transicao transition = new Transicao(spaceOrigem, spaceDestino);		
+
+		Transicao transition = new Transicao(spaceOrigem, spaceDestino);
 		spaceOrigem.setTransition(transition);
 	}
 }
