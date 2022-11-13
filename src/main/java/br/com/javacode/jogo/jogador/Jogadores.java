@@ -1,12 +1,15 @@
-package br.com.javacode.jogo.escadaserpentes;
+package br.com.javacode.jogo.jogador;
 
-public class Jogadores implements Printable {
+import br.com.javacode.jogo.br.com.java.jogo.jogoutil.Imprimir;
+import br.com.javacode.jogo.br.com.java.jogo.taboleiro.Taboleiro;
+
+public class Jogadores implements Imprimir {
 
 	private Jogador[] jogadores;
 
 	private int jogadorAtualIndex = -1;
 
-	public Jogadores(Board board, int numeroDeJogadores) {
+	public Jogadores(Taboleiro board, int numeroDeJogadores) {
 		jogadores = new Jogador[numeroDeJogadores];
 		char nomeAtual = 'A';
 

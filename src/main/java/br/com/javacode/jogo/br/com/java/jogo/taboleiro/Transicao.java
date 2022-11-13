@@ -1,30 +1,30 @@
-package br.com.javacode.jogo.escadaserpentes;
+package br.com.javacode.jogo.br.com.java.jogo.taboleiro;
 
-public class Transition {
+public class Transicao {
 
 	public enum Type {
 		COBRA, ESCADA;
 	}
 
-	private Space spaceInicial;
+	private Espaco spaceInicial;
 
-	private Space spaceDestino;
+	private Espaco spaceDestino;
 
 	private Type tipo;
 
 	@SuppressWarnings("static-access")
-	public Transition(Space spaceInicial, Space spaceDestino) {
+	public Transicao(Espaco spaceInicial, Espaco spaceDestino) {
 		this.spaceInicial = spaceInicial;
 		this.spaceDestino = spaceDestino;
 
 		this.tipo = spaceInicial.getNumber() < spaceDestino.getNumber() ? tipo.ESCADA : tipo.COBRA;
 	}
 
-	public Space getSpaceInicial() {
+	public Espaco getSpaceInicial() {
 		return spaceInicial;
 	}
 
-	public Space getSpaceDestino() {
+	public Espaco getSpaceDestino() {
 		return spaceDestino;
 	}
 

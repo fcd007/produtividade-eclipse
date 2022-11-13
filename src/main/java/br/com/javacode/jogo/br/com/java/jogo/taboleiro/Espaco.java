@@ -1,6 +1,6 @@
-package br.com.javacode.jogo.escadaserpentes;
+package br.com.javacode.jogo.br.com.java.jogo.taboleiro;
 
-public class Space {
+public class Espaco {
 
 	public enum Type {
 		START_HERE, HOME, REGULAR
@@ -8,9 +8,9 @@ public class Space {
 
 	private int number;
 	private Type type;
-	private Transition transition;
+	private Transicao transition;
 
-	public Space(int number, Type type) {
+	public Espaco(int number, Type type) {
 		this.number = number;
 		this.type = type;
 	}
@@ -32,11 +32,11 @@ public class Space {
 		}
 	}
 
-	public Transition getTransition() {
+	public Transicao getTransition() {
 		return transition;
 	}
 
-	public void setTransition(Transition transition) {
+	public void setTransition(Transicao transition) {
 		this.transition = transition;
 	}
 

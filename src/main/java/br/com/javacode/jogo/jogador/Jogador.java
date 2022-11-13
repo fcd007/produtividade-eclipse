@@ -1,10 +1,14 @@
-package br.com.javacode.jogo.escadaserpentes;
+package br.com.javacode.jogo.jogador;
+
+import br.com.javacode.jogo.br.com.java.jogo.dado.Dado;
+import br.com.javacode.jogo.br.com.java.jogo.taboleiro.Espaco;
+import br.com.javacode.jogo.br.com.java.jogo.taboleiro.Taboleiro;
 
 public class Jogador {
 
 	private String nome;
 
-	private Space atual;
+	private Espaco atual;
 
 	public Jogador(String nome) {
 		this.nome = nome;
@@ -14,15 +18,15 @@ public class Jogador {
 		return nome;
 	}
 
-	public Space getAtual() {
+	public Espaco getAtual() {
 		return atual;
 	}
 
-	public void goTo(Space spaceStartHere) {
+	public void goTo(Espaco spaceStartHere) {
 		atual = spaceStartHere;
 	}
 
-	public void jogarDado(Board board) {
+	public void jogarDado(Taboleiro board) {
 		Dado dado = Dado.get();
 		int numeroDado = dado.jogarDado();
 

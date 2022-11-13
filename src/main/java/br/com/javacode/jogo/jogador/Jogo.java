@@ -1,4 +1,6 @@
-package br.com.javacode.jogo.escadaserpentes;
+package br.com.javacode.jogo.jogador;
+
+import br.com.javacode.jogo.br.com.java.jogo.taboleiro.Taboleiro;
 
 public class Jogo {
 
@@ -6,7 +8,7 @@ public class Jogo {
 	private static final int NUMERO_DE_JOGADORES = 2;
 
 	public void play() {
-		Board board = new Board(NUMERO_SPACE);
+		Taboleiro board = new Taboleiro(NUMERO_SPACE);
 		addTransition(board);
 		board.print();
 
@@ -28,7 +30,7 @@ public class Jogo {
 		System.out.format("O ganhador foi o jogador %s", ganhador.getNome());
 	}
 
-	private void addTransition(Board board) {
+	private void addTransition(Taboleiro board) {
 		//criando um recurso de regra de transicao
 		board.adicionarTransicao(4, 12);
 		board.adicionarTransicao(7, 9);

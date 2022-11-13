@@ -1,4 +1,4 @@
-package br.com.javacode.jogo.escadaserpentes;
+package br.com.javacode.jogo.br.com.java.jogo.dado;
 
 import java.util.Random;
 
