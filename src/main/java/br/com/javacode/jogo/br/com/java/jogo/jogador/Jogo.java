@@ -2,11 +2,15 @@ package br.com.javacode.jogo.br.com.java.jogo.jogador;
 
 import br.com.javacode.jogo.br.com.java.jogo.taboleiro.Taboleiro;
 
+/**
+ * Classe que representa o jogo
+ *
+ */
 public class Jogo {
 
 	private static final int NUMERO_SPACE = 30;
 	private static final int NUMERO_DE_JOGADORES = 2;
-
+	
 	public void play() {
 		Taboleiro board = new Taboleiro(NUMERO_SPACE);
 		addTransition(board);
