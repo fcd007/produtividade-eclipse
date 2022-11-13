@@ -1,4 +1,4 @@
-package br.com.javacode.jogo.jogador;
+package br.com.javacode.jogo.br.com.java.jogo.jogador;
 
 import br.com.javacode.jogo.br.com.java.jogo.jogoutil.Imprimir;
 import br.com.javacode.jogo.br.com.java.jogo.taboleiro.Taboleiro;

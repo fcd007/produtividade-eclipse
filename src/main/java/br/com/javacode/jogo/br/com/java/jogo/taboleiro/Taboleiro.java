@@ -2,9 +2,9 @@ package br.com.javacode.jogo.br.com.java.jogo.taboleiro;
 
 import java.util.Arrays;
 
+import br.com.javacode.jogo.br.com.java.jogo.jogador.Jogador;
 import br.com.javacode.jogo.br.com.java.jogo.jogoutil.Imprimir;
 import br.com.javacode.jogo.br.com.java.jogo.taboleiro.Espaco.Type;
-import br.com.javacode.jogo.jogador.Jogador;
 
 public class Taboleiro implements Imprimir {
 

@@ -1,6 +1,6 @@
 package br.com.javacode.jogo.br.com.java.jogo;
 
-import br.com.javacode.jogo.jogador.Jogo;
+import br.com.javacode.jogo.br.com.java.jogo.jogador.Jogo;
 
 public class Application {
 
